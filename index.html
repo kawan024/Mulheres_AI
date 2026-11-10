@@ -1,36 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index de acesso a todas as páginas </title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mulheres na Tecnologia</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <header class="cabecalho">
-        <h1 id="titulo"> Mulheres da Tecnologia </h1>
-    </header>
-    <nav class="menu">
-        <ul>
-            <li> <a href="ada.html"> Ada </a> </li>
-            <li> <a href="grace.html"> Grace </a> </li>
-            <li> <a href="margareth.html"> Margarete </a> </li>
-            <li> <a href="dorothy.html"> Dorothy </a> </li>
-        </ul>
-    </nav>
-    </header>
+  <!-- Navegação superior -->
+  <header>
+    <div class="header-container">
+      <nav>
+        <a href="ada.html" class="nav-btn">Ada Lovelace</a>
+        <a href="grace.html" class="nav-btn">Grace Hopper</a>
+        <a href="margaret.html" class="nav-btn">Margaret Hamilton</a>
+        <a href="dorothy.html" class="nav-btn">Dorothy Vaughan</a>
+      </nav>
+      <!-- Botão para alternar tema -->
+      <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
 
-    <footer>
-        <p>
-            <b>Desenvolvido por:</b> <i> Kawan Victor </i> <br>
-            <b>Contato:</b> <i>xxx@gmail.com | (43) 9999-9999 </i> <br>
-            <i> Manoel ribas - Pr </i> 
-        </p>
-    </footer>
+  <!-- Início Tecnológico -->
+  <section class="hero">
+    <span class="hero-badge">Pioneiras da Computação</span>
+    <h1 class="hero-title">As Mulheres que Moldaram o Futuro Digital</h1>
+    <p class="hero-description">
+      Clique em uma das pioneiras para abrir sua página e ler a história completa.
+    </p>
+  </section>
+
+  <!-- Cards principais -->
+  <main class="cards-grid">
+    
+    <!-- Ada Lovelace -->
+    <a href="ada.html" class="card-link">
+      <article class="card">
+        <div class="card-img-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Ada_Lovelace_portrait.jpg" alt="Ada Lovelace">
+        </div>
+        <h2 class="card-title">Ada Lovelace</h2>
+        <span class="card-date">1815 – 1852</span>
+        <p class="card-summary">Criadora do primeiro algoritmo processado por uma máquina na história.</p>
+        <span class="read-more">Ler História Completa &rarr;</span>
+      </article>
+    </a>
+
+    <!-- Grace Hopper -->
+    <a href="grace.html" class="card-link">
+      <article class="card">
+        <div class="card-img-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg" alt="Grace Hopper">
+        </div>
+        <h2 class="card-title">Grace Hopper</h2>
+        <span class="card-date">1906 – 1992</span>
+        <p class="card-summary">Criadora da linguagem COBOL e do primeiro compilador.</p>
+        <span class="read-more">Ler História Completa &rarr;</span>
+      </article>
+    </a>
+
+    <!-- Margaret Hamilton -->
+    <a href="margaret.html" class="card-link">
+      <article class="card">
+        <div class="card-img-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Margaret_Hamilton_-_1995.jpg" alt="Margaret Hamilton">
+        </div>
+        <h2 class="card-title">Margaret Hamilton</h2>
+        <span class="card-date">1936 – Presente</span>
+        <p class="card-summary">Líder do software de navegação da missão Apollo 11 da NASA.</p>
+        <span class="read-more">Ler História Completa &rarr;</span>
+      </article>
+    </a>
+
+    <!-- Dorothy Vaughan -->
+    <a href="dorothy.html" class="card-link">
+      <article class="card">
+        <div class="card-img-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Dorothy_Vaughan.jpg" alt="Dorothy Vaughan">
+        </div>
+        <h2 class="card-title">Dorothy Vaughan</h2>
+        <span class="card-date">1910 – 2008</span>
+        <p class="card-summary">Primeira supervisora negra da NASA e especialista em FORTRAN.</p>
+        <span class="read-more">Ler História Completa &rarr;</span>
+      </article>
+    </a>
+
+  </main>
+
+  <footer>
+    © Mulheres na Tecnologia
+  </footer>
+
+  <!-- Script integrado para controle de tema claro/escuro -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (!themeToggleBtn) return;
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.textContent = '☀️';
+      } else {
+        themeIcon.textContent = '🌙';
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const isLight = document.body.classList.contains('light-theme');
+        themeIcon.textContent = isLight ? '☀️' : '🌙';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      });
+    });
+  </script>
 </body>
-
 </html>
