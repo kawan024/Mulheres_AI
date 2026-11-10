@@ -1,2 +1,2 @@
-# Mulheres_AI
-sobre as mulheres com AI
+# mulheres_tecnologia
+Site para ser finalizado pelos estudantes. 
